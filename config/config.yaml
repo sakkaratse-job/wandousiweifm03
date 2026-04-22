@@ -11,7 +11,7 @@ app:
 report:
   mode: "daily"                       # 日报模式，每天汇总一次
   display_mode: "full"                # 完整显示模式
-  send_time: "09:00"                  # 每天上午9点推送
+  send_time: "09:00"                  # 每天上午10点推送
 
 # 3. 监控平台配置（重点！）
 platforms:
@@ -27,7 +27,7 @@ platforms:
 # 4. 通知渠道配置（钉钉）
 notifications:
   dingtalk:
-    webhook_url: "https://oapi.dingtalk.com/robot/send?access_token=你的token"
+    webhook_url: "https://oapi.dingtalk.com/robot/send?access_token=22f315abaf213b32177b85c66b581e6368b09cad69fe9beb1bfdb08edf21ae5c"
     # ⚠️ 请将上面引号中的内容替换为你在步骤3中复制的完整Webhook地址
     enabled: true
   
