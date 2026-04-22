@@ -1,4 +1,47 @@
-# ═══════════════════════════════════════════════════════════════
+# ============================================================
+# TrendRadar 配置文件 - 豌豆思维舆情监测版
+# ============================================================
+
+# 1. 基础设置
+app:
+  name: "TrendRadar"
+  timezone: "Asia/Shanghai"          # 时区设置为北京时间
+
+# 2. 报告模式
+report:
+  mode: "daily"                       # 日报模式，每天汇总一次
+  display_mode: "full"                # 完整显示模式
+  send_time: "09:00"                  # 每天上午9点推送
+
+# 3. 监控平台配置（重点！）
+platforms:
+  enabled:
+    - "xiaohongshu"                   # 小红书（你的主要监控目标）
+    - "weibo"                         # 微博
+    - "zhihu"                         # 知乎
+    # 如需监控其他平台，可取消注释：
+    # - "douyin"                      # 抖音
+    # - "baidu"                       # 百度热搜
+    # - "toutiao"                     # 今日头条
+
+# 4. 通知渠道配置（钉钉）
+notifications:
+  dingtalk:
+    webhook_url: "https://oapi.dingtalk.com/robot/send?access_token=你的token"
+    # ⚠️ 请将上面引号中的内容替换为你在步骤3中复制的完整Webhook地址
+    enabled: true
+  
+  # 推送内容设置
+  push_content:
+    include_summary: true             # 包含摘要信息
+    include_link: true                # 包含原文链接
+    include_keywords: true            # 包含触发的关键词
+
+# 5. AI 分析配置（可选，开启后可以自动分析情感）
+ai_analysis:
+  enabled: false                      # 建议先关闭，需要时再开启
+  # model: "ernie"                    # 使用百度ERNIE模型
+  # sentiment_analysis: true          # 情感分析# ═══════════════════════════════════════════════════════════════
 #                    TrendRadar 配置文件
 #                      Version: 2.2.0
 # ═══════════════════════════════════════════════════════════════
